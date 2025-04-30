@@ -176,8 +176,18 @@
          align-items:center; /*세로 중앙*/
          height:10vh; /*화면 전체 높이*/
       }
+
+      .clearfix::after {
+         content: "";
+         display:table;
+         clear:both;
+      }
       
       #timer {
+         position: fixed;
+         top:30px;
+         right:30px;
+         z-index:9999; /* 다른 요소 위에 보이도록 */
          display:inline-block;
         font-size: 24px;
         font-family: Pretendard;
