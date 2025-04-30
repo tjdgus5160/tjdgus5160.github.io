@@ -86,8 +86,8 @@
    <!-- 토글 버튼 역할을 할 label과 input -->
 <label for="nav-toggle" class="nav-toggle-label">메뉴</label>
 <input type="checkbox" id="nav-toggle" style="display:none;">
-   <nav class="nav-menu">
-      <ul id="main-nav" class="nav-menu">
+   <nav id="main-nav">
+      <ul>
          <li><span>자기소개</span></li>
          <li><span>해낸 것?</span></li>
          <li><span>좋아하는 리스트</span></li>
@@ -121,15 +121,6 @@
       찾아오는 길:<a href="#">약도</a>
    </footer>
    </div>
-     <!-- 자바스크립트는 여기! -->
-  <script>
-    const nav = document.getElementById('main-nav');
-    nav.addEventListener('mouseover', function() {
-      nav.style.display = 'block';
-    });
-    nav.addEventListener('mouseout', function() {
-      nav.style.display = 'none';
-    });
-  </script>
+
 </body>
 </html>
