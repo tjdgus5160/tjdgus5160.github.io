@@ -99,15 +99,16 @@
       footer{clear:both;padding:20px;border:1px solid #330000 ;background: transparent;
               text-align:center }
 
-      .video.center {
+      .video-center {
          display: flex;
-         margin-left:auto;
-         margin-right:auto;
+         justify-content:center; /*가로 중앙*/
+         align-items:center; /*세로 중앙*/
+         height:10vh; /*화면 전체 높이*/
       }
   </style> 
 </head>
 <body> 
-   <video class="center" video id="myVideo" width="960" height="720" controls autoplay loop muted>
+   <video id="myVideo" width="960" height="720" controls autoplay loop muted>
      <source src="https://tjdgus5160.github.io/KakaoTalk_20250420_022556182.mp4" type="video/mp4">
      브라우저가 video 태그를 지원하지 않습니다.
    </video>
