@@ -101,8 +101,7 @@
         padding-top: 100px;
         transition: box-shadow 0.3s;
       }
-      #menu-btn #menu-icon {
-         display: inline-block;
+      #menu-btn {
         position: fixed;
         top: 40px;
         left: 40px;
@@ -114,11 +113,22 @@
         font-size: 28px;
         cursor: pointer;
         box-shadow: 2px 2px 8px rgba(0,0,0,0.07);
-        transition: transform 0.2s;
+        transition: background 0.3s, color 0.3s;
+         color: #000; 
       }
+      #menu-btn #menu-icon {
+         display:inline-block;
+         transition:transform 0.3s, color 0.3s;
+         color:#000;
+      }
+      #menu-btn:hover {
+         background: #000;
+         color: #0f0fff;
+      }
+      
       #menu-btn:hover #menu-icon {
          transform:rotate(90deg);
-        background: #ffffff;
+        background: #0f0fff;
       }
       #side-menu ul {
         list-style: none;
