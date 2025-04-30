@@ -26,56 +26,62 @@
       hgroup h1{float:left;font-size:18px;color:#000}
       hgroup h2{float:right;font-weight:normal;color:#000;opacity:0.8}
 
-      /* 수정된 네비게이션 스타일 */
-      nav { 
-        text-align: center;
-        position: relative;
-        z-index: 1000;
-      }
-      #main-nav ul {
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-      }
-      #main-nav > ul > li {
-        float: left;
-        position: relative;
-        margin: 0 15px;
-      }
-      #main-nav li span {
-        display: block;
-        padding: 10px 20px;
-        border: 1px solid #000;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s;
-      }
-      #main-nav li:hover span {
-        background: #f0f0f0;
-      }
-
-      /* 서브메뉴 스타일 */
-      .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: #fff;
-        border: 1px solid #000;
-        border-radius: 5px;
-        min-width: 150px;
-        box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-      }
-      #main-nav li:hover .submenu {
-        display: block;
-      }
-      .submenu li {
-        padding: 8px 15px;
-        white-space: nowrap;
-      }
-      .submenu li:hover {
-        background: #99ccff;
-      }
+  /* 네비게이션 메뉴 */
+        nav {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px;
+        }
+        nav ul {
+          display: flex;
+          gap: 30px;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+        nav li {
+          position: relative;
+        }
+        nav li > span {
+          display: block;
+          padding: 10px 20px;
+          border: 1px solid #000;
+          border-radius: 5px;
+          cursor: pointer;
+          background: #f5f5f5;
+          transition: background 0.3s;
+        }
+        nav li > span:hover {
+          background: #e0e0e0;
+        }
+  /* 서브메뉴 */
+        .submenu {
+          display: none;
+          position: absolute;
+          top: 110%;
+          left: 0;
+          background: #fff;
+          border: 1px solid #000;
+          border-radius: 5px;
+          min-width: 150px;
+          box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+          padding: 0;
+          z-index: 10;
+        }
+        nav li:hover > .submenu {
+          display: block;
+        }
+        .submenu li {
+          padding: 10px 15px;
+          white-space: nowrap;
+          border-bottom: 1px solid #eee;
+        }
+        .submenu li:last-child {
+          border-bottom: none;
+        }
+        .submenu li:hover {
+          background: #99ccff;
+        }
 
       /* 기존 토글 관련 코드 제거 */
       section{float:left;width:518px;margin-top:15px;
