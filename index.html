@@ -179,10 +179,12 @@
       
       #timer {
         font-size: 24px;
-        font-family: monospace;
+        font-family: Pretendard;
         padding: 10px;
         background: #f0f0f0;
         border-radius: 5px;
+         cursor: grab;
+         user-select: none;
       }
 
   </style> 
@@ -329,7 +331,21 @@ setInterval(updateTimer, 1000);
 
 // 4. 페이지 갱신 시에도 계속 유지
 window.addEventListener('load', updateTimer);
+</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+
+<script>
+gsap.registerPlugin(Draggable);
+
+Draggable.create("#timer", {
+  type: "x,y", // x축, y축 모두 이동 가능
+  edgeResistance: 0.8,
+  bounds: "body", // body 영역 내에서만 이동
+  inertia: true,
+  cursor: "grab",
+  activeCursor: "grabbing"
+});
 </script>
 
 </body>
