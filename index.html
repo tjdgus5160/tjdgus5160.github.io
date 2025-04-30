@@ -67,10 +67,6 @@
    <img id="rotated-image" src="https://tjdgus5160.github.io/IQM Spark.png" style="width:400px; height:auto;" alt="양자컴퓨터">
 
    <script>
-      const nav = document.getElementById('main-nav');
-      nav.addEventListener('mouseover', function() { nav.style.display='block'; });
-      nav.addEventListener('mouseout', function() { nav.style.display='none'; });
-      
       let rotation = 0;
       const img = document.getElementById('rotated-image');
 
@@ -92,6 +88,12 @@
 <input type="checkbox" id="nav-toggle" style="display:none;">
    <nav class="nav-menu">
       <ul id="main-nav" class="nav-menu">
+         <script>
+            const nav = document.getElementById('main-nav');
+            nav.addEventListener('mouseover', function() { nav.style.display='block'; });
+            nav.addEventListener('mouseout', function() { nav.style.display='none'; });
+      
+         </script>
          <li><span>자기소개</span></li>
          <li><span>해낸 것?</span></li>
          <li><span>좋아하는 리스트</span></li>
