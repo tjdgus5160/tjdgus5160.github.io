@@ -28,6 +28,18 @@
       hgroup h2{float:right;font-weight:normal;color:#000;opacity:0.8}
 
       nav { text-align: center;}
+      .nav-menu { display:none; }
+      #nav-toggle:checked + .nav-menu { display:block; }
+      /* label을 버튼처럼 스타일링 */
+      .nav-toggle-label {
+        display: inline-block;
+        padding: 8px 16px;
+        background: #99ccff;
+        border: 1px solid #333;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
       nav ul {display: inline-block;
               padding: 0;
               margin: 0; }
@@ -57,11 +69,15 @@
          <h2>by 박성현</h2>
       </hgroup>
    </header>
-   <nav>
+
+   <!-- 토글 버튼 역할을 할 label과 input -->
+<label for="nav-toggle" class="nav-toggle-label">메뉴</label>
+<input type="checkbox" id="nav-toggle" style="display:none;">
+   <nav class="nav-menu">
       <ul>
-         <li><span>자기소개</span><br></li>
-         <li><span>해낸 것?</span><br></li>
-         <li><span>좋아하는 리스트</span><br></li>
+         <li><span>자기소개</span></li>
+         <li><span>해낸 것?</span></li>
+         <li><span>좋아하는 리스트</span></li>
       </ul>
    </nav>
    <section> 
