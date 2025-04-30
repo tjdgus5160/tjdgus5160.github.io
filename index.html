@@ -89,6 +89,57 @@
           background: #99ccff;
         }
 
+      #side-menu {
+        position: fixed;
+        top: 0; left: -270px;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        border-right: 5px solid #99ccff;
+        box-shadow: 3px 0 16px rgba(0,0,0,0.06);
+        z-index: 2000;
+        padding-top: 100px;
+        transition: box-shadow 0.3s;
+      }
+      #menu-btn {
+        position: fixed;
+        top: 40px;
+        left: 40px;
+        z-index: 2001;
+        background: #99ccff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 18px;
+        font-size: 28px;
+        cursor: pointer;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.07);
+        transition: background 0.2s;
+      }
+      #menu-btn:hover {
+        background: #66b2ff;
+      }
+      #side-menu ul {
+        list-style: none;
+        padding: 0 30px;
+      }
+      #side-menu li {
+        margin-bottom: 30px;
+      }
+      #side-menu a {
+        font-size: 22px;
+        color: #222;
+        text-decoration: none;
+        padding: 8px 0;
+        display: block;
+        border-bottom: 1px solid #e0e0e0;
+        transition: color 0.2s;
+      }
+      #side-menu a:hover {
+        color: #0077cc;
+        border-bottom: 2px solid #99ccff;
+      }
+
+
       /* 기존 토글 관련 코드 제거 */
       section{float:left;width:518px;margin-top:15px;
              margin-bottom:20px;padding:20px;border:1px 
@@ -128,34 +179,23 @@
       </hgroup>
    </header>
 
+   <button id="menu-btn" aria-label="메뉴 열기">
+      <span id="menu-icon">☰</span>
+   </button>  
+
+   <div id="menu-overlay" style="display:none; position:fixed; top:0; left:0; 
+      width:100vw; height:100vh; background:rgba(0,0,0,0.18); z-index:1999;">
+      
+   </div>
+
+
    <!-- 수정된 네비게이션 구조 -->
-   <nav id="main-nav">
+   <nav id="side-menu">
       <ul>
-         <li>
-            <span>자기소개</span>
-            <ul class="submenu">
-              <li>프로필</li>
-              <li>경력</li>
-              <li>학력</li>
-            </ul>
-         </li>
-         <li>
-            <span>해낸 것?</span>
-            <ul class="submenu">
-              <li>프로젝트1</li>
-              <li>프로젝트2</li>
-              <li>수상경력</li>
-            </ul>
-         </li>
-         <li>
-            <span>좋아하는 리스트</span>
-            <ul class="submenu">
-              <li>영화</li>
-              <li>음악</li>
-              <li>책</li>
-            </ul>
-         </li>
-      </ul>
+       <li><a href="#">자기소개</a></li>
+       <li><a href="#">해낸 것?</a></li>
+       <li><a href="#">좋아하는 리스트</a></li>
+     </ul>
    </nav>
       <section> 
       <article>
@@ -195,6 +235,42 @@
       찾아오는 길:<a href="#">약도</a>
    </footer>
    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const sideMenu = document.getElementById('side-menu');
+const menuOverlay = document.getElementById('menu-overlay');
+let menuOpen = false;
+
+// 메뉴 열기
+function openMenu() {
+  gsap.to(sideMenu, { left: 0, duration: 0.6, ease: "power3.out" });
+  menuOverlay.style.display = 'block';
+  menuOpen = true;
+}
+
+// 메뉴 닫기
+function closeMenu() {
+  gsap.to(sideMenu, { left: -270, duration: 0.5, ease: "power3.in" });
+  menuOverlay.style.display = 'none';
+  menuOpen = false;
+}
+
+// 버튼 클릭 시 메뉴 열기/닫기
+menuBtn.addEventListener('click', () => {
+  menuOpen ? closeMenu() : openMenu();
+});
+
+// 오버레이 클릭 시 닫기
+menuOverlay.addEventListener('click', closeMenu);
+
+// ESC 키로 닫기
+document.addEventListener('keydown', (e) => {
+  if (menuOpen && e.key === "Escape") closeMenu();
+});
+</script>
+
 
 </body>
 </html>
