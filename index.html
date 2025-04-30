@@ -70,9 +70,9 @@
       let rotation = 0;
       const img = document.getElementById('rotated-image');
 
-      setInterval(function() { rotation = (rotation+2) % 360; // 2도씩 증가, 속도 조절 가능
+      setInterval(function() { rotation = (rotation+10) % 360; // 2도씩 증가, 속도 조절 가능
                               img.style.transform = `rotate(${rotation}deg)`;
-                             }, 20); // 20ms마다 실행 (속도 조절 가능)
+                             }, 10); // 20ms마다 실행 (속도 조절 가능)
    </script>
    
    <div id="container">
