@@ -59,10 +59,22 @@
       aside .ad{height:100px;margin-bottom:20px;background-color:#ebebeb}
       footer{clear:both;padding:20px;border:1px solid #330000 ;background: transparent;
               text-align:center }
+
+      #rotated-image { transition: transform 0.5s linear; }
   </style> 
 </head>
 <body>
-   <img src="https://tjdgus5160.github.io/IQM Spark.png" style="width:200px; height:auto;" alt="양자컴퓨터">
+   <img id="rotated-image" src="https://tjdgus5160.github.io/IQM Spark.png" style="width:700px; height:auto;" alt="양자컴퓨터">
+
+   <script>
+      let rotation = 0;
+      const img = document.getElementById('rotated-image');
+
+      setInterval(function() { rotation = (rotation+2) % 360; // 2도씩 증가, 속도 조절 가능
+                              img.style.transform = 'rotate(${rotation}deg)';
+                             }, 20); // 20ms마다 실행 (속도 조절 가능)
+   </script>
+   
    <div id="container">
    <header>
       <hgroup>
