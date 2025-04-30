@@ -67,10 +67,14 @@
    <img id="rotated-image" src="https://tjdgus5160.github.io/IQM Spark.png" style="width:400px; height:auto;" alt="양자컴퓨터">
 
    <script>
+      const nav = document.getElementById('main-nav');
+      nav.addEventListener('mouseover', function() { nav.style.display='block'; });
+      nav.addEventListener('mouseout', function() { nav.style.display='none'; });
+      
       let rotation = 0;
       const img = document.getElementById('rotated-image');
 
-      setInterval(function() { rotation = (rotation+10) % 360; // 2도씩 증가, 속도 조절 가능
+      setInterval(function() { rotation = (rotation+2) % 360; // 2도씩 증가, 속도 조절 가능
                               img.style.transform = `rotate(${rotation}deg)`;
                              }, 10); // 20ms마다 실행 (속도 조절 가능)
    </script>
@@ -87,7 +91,7 @@
 <label for="nav-toggle" class="nav-toggle-label">메뉴</label>
 <input type="checkbox" id="nav-toggle" style="display:none;">
    <nav class="nav-menu">
-      <ul>
+      <ul id="main-nav" class="nav-menu">
          <li><span>자기소개</span></li>
          <li><span>해낸 것?</span></li>
          <li><span>좋아하는 리스트</span></li>
