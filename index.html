@@ -100,17 +100,7 @@
               text-align:center }
   </style> 
 </head>
-<body>
-   <img id="rotated-image" src="https://tjdgus5160.github.io/IQM Spark.png" style="width:400px; height:auto;" alt="양자컴퓨터">
-
-   <script>
-      let rotation = 0;
-      const img = document.getElementById('rotated-image');
-      setInterval(() => {
-        rotation = (rotation + 5) % 360;
-        img.style.transform = `rotate(${rotation}deg)`;
-      }, 20);
-   </script>
+<body> 
    
    <div id="container">
    <header>
@@ -119,6 +109,11 @@
          <h2>by 박성현</h2>
       </hgroup>
    </header>
+
+   <video width="640" height="360" autoplay loop muted controls>
+     <source src="https://tjdgus5160.github.io/KakaoTalk_20250420_022556182.mp4" type="video/mp4">
+     브라우저가 video 태그를 지원하지 않습니다.
+   </video>
 
    <!-- 수정된 네비게이션 구조 -->
    <nav id="main-nav">
