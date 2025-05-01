@@ -182,6 +182,23 @@
          /*height:10vh; 화면 전체 높이*/
       }
 
+      .video-row {
+        display: flex;
+        justify-content: center;   /* 가로 중앙 정렬 */
+        align-items: center;       /* 세로 중앙 정렬 */
+        gap: 32px;                 /* 동영상 사이 간격 */
+        margin: 40px 0;
+      }
+
+      .side-video {
+        width: 360px;
+        max-width: 45vw;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+
       .clearfix::after {
          content: "";
          display:table;
@@ -225,21 +242,11 @@
       document.getElementById('myVideo').playbackRate = 16; // 최대 16배속 재생
    </script>
 
-   <video id="myVideo1" width="360" height="240" autoplay loop muted>
-     <source src="https://tjdgus5160.github.io/오이이아이.mp4" type="video/mp4">
-     브라우저가 video 태그를 지원하지 않습니다.
-   </video>
-   <script>
-      document.getElementById('myVideo1').playbackRate = 4; // 최대 16배속 재생
-   </script>
+   <div class="video-row">
+     <video class="side-video" src="https://tjdgus5160.github.io/오이이아이.mp4" controls width="360" height="240" autoplay loop muted></video>
+     <video class="side-video" src="https://tjdgus5160.github.io/오이이아이.mp4" controls width="360" height="240" autoplay loop muted></video>
+   </div>
 
-   <video id="myVideo2" width="360" height="240" autoplay loop muted>
-     <source src="https://tjdgus5160.github.io/오이이아이.mp4" type="video/mp4">
-     브라우저가 video 태그를 지원하지 않습니다.
-   </video>
-   <script>
-      document.getElementById('myVideo2').playbackRate = 4; // 최대 16배속 재생
-   </script>
 
    <img id="custom-cursor" src="https://tjdgus5160.github.io/Half-life.png" style="display:none;" />
    
