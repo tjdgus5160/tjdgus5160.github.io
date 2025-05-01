@@ -377,31 +377,20 @@ Draggable.create("#timer", {
 });
 </script>
 
-// 마우스 커서 JS
+
 <script>
-const cursor = document.getElementById('custom-cursor');
+const cursorImg = document.getElementById('custom-cursor');
+
+// 페이지가 로드되면 이미지 보이기
+window.addEventListener('DOMContentLoaded', () => {
+  cursorImg.style.display = 'block';
+});
+
 document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
+  cursorImg.style.left = `${e.clientX}px`;
+  cursorImg.style.top = `${e.clientY}px`;
 });
-function setCursorHoverEffect(on) {
-  if (on) {
-    cursor.style.width = '44px';
-    cursor.style.height = '44px';
-    cursor.style.background = 'black';
-    cursor.style.border = '2px solid white';
-  } else {
-    cursor.style.width = '32px';
-    cursor.style.height = '32px';
-    cursor.style.background = 'white';
-    cursor.style.border = 'none';
-  }
-}
-const clickableSelectors = 'a, button, [role="button"], input[type="button"], input[type="submit"], .cursor-pointer';
-document.querySelectorAll(clickableSelectors).forEach(el => {
-  el.addEventListener('mouseenter', () => setCursorHoverEffect(true));
-  el.addEventListener('mouseleave', () => setCursorHoverEffect(false));
-});
+
 </script>
 </body>
 </html>
