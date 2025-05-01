@@ -178,8 +178,7 @@
       .video-center {
          display: flex;
          justify-content:center; /*가로 중앙*/
-         align-items:center; /*세로 중앙*/
-         /*height:10vh; 화면 전체 높이*/
+         /*align-items:center; 세로 중앙*/
       }
 
       .video-row {
@@ -243,9 +242,18 @@
    </script>
 
    <div class="video-row">
-     <video class="side-video" src="https://tjdgus5160.github.io/오이이아이.mp4" controls width="360" height="240" autoplay loop muted></video>
-     <video class="side-video" src="https://tjdgus5160.github.io/오이이아이.mp4" controls width="360" height="240" autoplay loop muted></video>
+     <video class="side-video" src="https://tjdgus5160.github.io/오이이아이.mp4" controls width="360" height="240" autoplay loop muted>
+        브라우저가 video 태그를 지원하지 않습니다.
+     </video>
+     <video class="side-video" src="https://tjdgus5160.github.io/오이이아이.mp4" controls width="360" height="240" autoplay loop muted>
+        브라우저가 video 태그를 지원하지 않습니다.
+     </video>
    </div>
+   <script>
+      document.querySelectorAll('.side-video').forEach(function(video) {
+     video.playbackRate = 4;
+   })
+   </script>
 
 
    <img id="custom-cursor" src="https://tjdgus5160.github.io/Half-life.png" style="display:none;" />
