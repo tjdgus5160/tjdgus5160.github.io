@@ -170,7 +170,9 @@
       aside p { text-align:center; }
       aside .ad{height:100px;margin-bottom:20px;background-color:#ebebeb}
       footer{width:80%;padding:20px;border:1px solid #330000 ;background: #fff;
-              text-align:center; border-width: 3px; clear:both; align-items:center;}
+              text-align:center; border-width: 3px; clear:both; align-items:center;
+            margin: 0 auto;
+            }
 
       .video-center {
          display: flex;
@@ -202,11 +204,15 @@
 
       #custom-cursor {
          position:fixed;
-         width:40px;
-         height:40px;
+         left:0; top:0;
+         width:32px;
+         height:32px;
+         border-radius:50%;
+         mix-blend-mode:difference;
          pointer-events:none; /*이미지가 클릭 등 이벤트를 막지 않도록 */
          z-index:99999;
          transform:translate(-50%,-50%); /* 이미지 중앙이 커서에 오도록 */
+         transition:width 0.2s, height 0.2s, border 0.2s;
       }
 
   </style> 
@@ -292,6 +298,12 @@
    </footer>
    </div>
 
+   <!-- body 맨 아래에 추가 -->
+   <div id="custom-cursor">
+      
+   </div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 const menuBtn = document.getElementById('menu-btn');
@@ -374,20 +386,30 @@ Draggable.create("#timer", {
 
 // 마우스 커서 JS
 <script>
-const cursorImg = document.getElementById('custom-cursor');
-
-// 페이지가 로드되면 이미지 보이기
-window.addEventListener('DOMContentLoaded', () => {
-  cursorImg.style.display = 'block';
-});
-
+const cursor = document.getElementById('custom-cursor');
 document.addEventListener('mousemove', (e) => {
-  cursorImg.style.left = `${e.clientX}px`;
-  cursorImg.style.top = `${e.clientY}px`;
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
 });
-
+function setCursorHoverEffect(on) {
+  if (on) {
+    cursor.style.width = '44px';
+    cursor.style.height = '44px';
+    cursor.style.background = 'black';
+    cursor.style.border = '2px solid white';
+  } else {
+    cursor.style.width = '32px';
+    cursor.style.height = '32px';
+    cursor.style.background = 'white';
+    cursor.style.border = 'none';
+  }
+}
+const clickableSelectors = 'a, button, [role="button"], input[type="button"], input[type="submit"], .cursor-pointer';
+document.querySelectorAll(clickableSelectors).forEach(el => {
+  el.addEventListener('mouseenter', () => setCursorHoverEffect(true));
+  el.addEventListener('mouseleave', () => setCursorHoverEffect(false));
+});
 </script>
-
 </body>
 </html>
 
