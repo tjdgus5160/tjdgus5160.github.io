@@ -28,6 +28,13 @@
          cursor:none; /*기본 커서 숨기기 */
       }
       li{list-style:none}
+
+      <h2 id="anime-text" style="text-align:center; margin-top:30px; font-size:2.3em; letter-spacing:0.15em;">
+        <span>H</span><span>E</span><span>L</span><span>L</span><span>O</span>
+        <span>&nbsp;</span>
+        <span>W</span><span>O</span><span>R</span><span>L</span><span>D</span>
+      </h2>
+
       
       #container{width:80%; margin:0; box-sizing:border-box; }
       header{margin-top:5px;padding:20px;border:1px solid #000;background: #fff; 
@@ -412,6 +419,31 @@ document.addEventListener('mousemove', (e) => {
 });
 
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js">
+   
+</script>
+<script>
+anime({
+  targets: "#anime-text span",
+  // y축으로 위로 올라갔다가 다시 내려오게
+  translateY: [
+    { value: -44, duration: 600, easing: 'easeOutExpo' },
+    { value: 0, duration: 800, delay: 100, easing: 'easeOutBounce' }
+  ],
+  // 회전 효과
+  rotate: {
+    value: '1turn',
+    easing: 'easeInOutSine'
+  },
+  delay: (el, i) => i * 50, // 각 글자마다 50ms씩 순차 지연
+  loop: true,
+  loopDelay: 1000,
+  easing: 'inOutCirc'
+});
+</script>
+
+
 </body>
 </html>
 
