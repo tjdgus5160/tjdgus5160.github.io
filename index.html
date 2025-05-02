@@ -239,10 +239,134 @@
          display: inline-block;
       }
 
+      /* CSS 추가 */
+      .scroll-container {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+      }
+
+      .scroll-section {
+        height: 100vh;
+        scroll-snap-align: start;
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.8s ease-out;
+      }
+
+      .scroll-section.active {
+        opacity: 1;
+      }
+
+
   </style> 
 </head>
 <body> 
 
+   <!-- HTML 구조 -->
+   <div class="scroll-container">
+  <!-- 1. 동영상 섹션 -->
+     <div class="scroll-section">
+      <video id="myVideo" width="720" height="480" autoplay loop muted>
+        <source src="https://tjdgus5160.github.io/KakaoTalk_20250420_022556182.mp4" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+      </video>
+      <script>
+         document.getElementById('myVideo').playbackRate = 3; // 최대 16배속 재생
+      </script>
+     </div>
+
+  <!-- 2. 텍스트 애니메이션 섹션 -->
+     <div class="scroll-section">
+         <h2 id="anime-text" class="invert-text" style="text-align:center; 
+            margin-top:30px; font-size:4em; letter-spacing:0.15em;">
+            <span>F</span><span>U</span><span>C</span><span>K</span>
+            <span>&nbsp;</span>
+            <span>Y</span><span>O</span><span>U</span>
+         </h2>
+     </div>
+
+  <!-- 3. 메인 컨텐츠 섹션 -->
+     <div class="scroll-section">
+      <div id="container">
+         <h2 id="anime-text" class="invert-text" style="text-align:center; 
+            margin-top:30px; font-size:4em; letter-spacing:0.15em;">
+            <span>F</span><span>U</span><span>C</span><span>K</span>
+            <span>&nbsp;</span>
+            <span>Y</span><span>O</span><span>U</span>
+         </h2>
+      
+      <header>
+         <hgroup>
+            <h1>세상은   돈다<br></h1>
+            <h2>by 박성현</h2>
+         </hgroup>
+      </header>
+
+      <button id="menu-btn" aria-label="메뉴 열기">
+         <span id="menu-icon">☰</span>
+      </button>  
+
+      <div id="menu-overlay" style="display:none; position:fixed; top:0; left:0; 
+         width:100vw; height:100vh; background:rgba(0,0,0,0.18); z-index:1999;">
+      
+      </div>
+
+      <div id="timer">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+      </div>
+
+
+
+   <!-- 수정된 네비게이션 구조 -->
+      <nav id="side-menu">
+         <ul>
+          <li><a href="profile.html">자기소개</a></li>
+          <li><a href="project.html">해낸 것?</a></li>
+          <li><a href="list.html">좋아하는 리스트</a></li>
+        </ul>
+      </nav>
+         <section> 
+         <article>
+            <h1> 일기장? </h1>
+            <p> 내가 한 것들을 적는 란 </p>
+         </article>
+         <article>
+            <h1> 할 수 있는거 </h1>
+            <p> ▶ Rydberg electromagnetic induced transparency spectroscopy </p>
+            <p> ▶ Saturation absorption spectroscopy </p>
+              <p> ▶ Python PID coding </p>
+            <p> ▶ optical transfer cavity (진행중) </p>
+            <p> ▶ Three-level density matrix calculation </p>
+            <p> ▶ Blender 3D (setup image, video) </p>
+            <p> ▶ html, css, javascript (진행중) </p>
+            <p> ▶ LabVIEW (진행중) </p>
+            <p> ▶ FPGA (예정) </p>
+            <p> ▶ IQM Spark 관리자 </p>
+            <p> ▶ IQM Spark 알고리즘 (하고싶다) </p>
+         </article>
+         <article>
+            <h1> 이제는 더 이상 물러날 곳이 없다 </h1>
+            <p> 음 </p>
+         </article>
+      </section>
+      <aside>
+         <p class="ad">싫어!</p>
+         <ul>
+            <li><b>html5강좌</b></li>
+            <li><b>html5연습</b></li>
+            <li><b>연습</b></li>
+         </ul>
+      </aside>
+      <footer>
+         이메일:tjdgus5160@chungbuk.ac.kr<br>
+         회사주소: 충북<br>
+         찾아오는 길:<a href="#">약도</a>
+      </footer>
+      </div>
+   </div>
+
+   
    <video id="myVideo" width="720" height="480" autoplay loop muted>
      <source src="https://tjdgus5160.github.io/KakaoTalk_20250420_022556182.mp4" type="video/mp4">
      브라우저가 video 태그를 지원하지 않습니다.
