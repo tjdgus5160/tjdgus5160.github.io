@@ -2,55 +2,149 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>충북양자연구센터 (CBQRC)</title>
+    <title>충북양자연구센터 (CBQRC) Activity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Pretendard Font -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <!-- Remixicon for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; 
-            margin: 0; 
-            background: #f5f7fa; 
+        :root {
+            --main-blue: #23408e;
+            --sub-blue: #4fc3f7;
+            --gray-bg: #f5f7fa;
+            --card-bg: #fff;
+            --border-radius: 16px;
+            --shadow: 0 4px 16px rgba(35,64,142,0.08);
+        }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            background: var(--gray-bg);
             font-weight: 500;
+            color: #222;
         }
-        header { 
-            background: #2d3e50; 
-            color: #fff; 
-            padding: 40px 0; 
-            text-align: center; 
+        header {
+            background: linear-gradient(90deg, var(--main-blue) 60%, var(--sub-blue) 100%);
+            color: #fff;
+            padding: 48px 0 30px 0;
+            text-align: center;
+            position: relative;
         }
-        h1 {
+        .header-title {
+            font-size: 2.4em;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .header-desc {
+            font-size: 1.15em;
+            font-weight: 600;
+            opacity: 0.92;
+        }
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(35,64,142,0.06);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0;
+            border-bottom: 1px solid #e0e4ea;
+        }
+        nav a {
+            display: inline-block;
+            color: var(--main-blue);
+            text-decoration: none;
+            font-size: 1.08em;
             font-weight: 700;
-            font-size: 2.5em;
-            margin: 10px 0;
+            padding: 18px 0 16px 0;
+            transition: color 0.2s;
+            border-bottom: 3px solid transparent;
         }
-        nav { 
-            background: #1a232f; 
-            padding: 15px 0; 
-            font-weight: 700;
+        nav a:hover, nav a.active {
+            color: var(--sub-blue);
+            border-bottom: 3px solid var(--sub-blue);
         }
-        nav a { 
-            color: #fff; 
-            text-decoration: none; 
-            margin: 0 25px; 
-            font-size: 1.1em;
+        main {
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+            padding: 0 18px 48px 18px;
         }
-        nav a:hover { 
-            color: #4fc3f7; 
-        }
-        main { 
-            max-width: 1000px; 
-            margin: 40px auto; 
-            background: #fff; 
-            padding: 50px 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 36px 32px 30px 32px;
+            margin-bottom: 28px;
         }
         h2 {
-            color: #2d3e50;
-            border-bottom: 3px solid #e0e4ea;
-            padding-bottom: 12px;
+            color: var(--main-blue);
+            font-size: 1.35em;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 i {
+            font-size: 1.1em;
+            color: var(--sub-blue);
+        }
+        .activity-item {
+            margin-bottom: 36px;
+        }
+        .activity-title {
+            font-size: 1.13em;
             font-weight: 700;
-            font-size: 1.8em;
+            color: var(--main-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .activity-date {
+            color: #666;
+            font-size: 1.02em;
+            margin-left: 8px;
+        }
+        .main-image {
+            max-width: 700px;
+            margin: 18px auto 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .main-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.07em;
+        }
+        .contact-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .contact-list i {
+            color: var(--sub-blue);
+            font-size: 1.2em;
+        }
+        @media (max-width: 800px) {
+            .card { padding: 24px 10px 20px 10px; }
+            main { padding: 0 2vw 36px 2vw; }
+            nav { gap: 18px; }
+        }
+        @media (max-width: 500px) {
+            .header-title { font-size: 2em; }
+            .header-desc { font-size: 1em; }
+            nav a { font-size: 1em; padding: 12px 0 10px 0;}
         }
         footer { 
             text-align: center; 
@@ -60,56 +154,53 @@
             margin-top: 60px;
             font-weight: 500;
         }
-        @media (max-width: 768px) {
-            main { padding: 30px 15px; }
-            nav a { margin: 0 15px; }
-        }
-        .main-image {
-            max-width: 800px;
-            margin: 30px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .main-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+        footer p { text-align: center; }
     </style>
 </head>
 <body>
     <header>
-        <h1>충북양자연구센터</h1>
-        <p style="font-weight: 600; font-size: 1.2em;">Chungbuk Quantum Research Center</p>
+        <div class="header-title">충북양자연구센터</div>
+        <div class="header-desc">Chungbuk Quantum Research Center</div>
     </header>
+    <nav>
+        <a href="#activity" class="active"><i class="ri-calendar-event-line"></i> Activity</a>
+        <a href="#contact"><i class="ri-contacts-line"></i> 연락처</a>
+    </nav>
     <main>
-        <section id="about">
-            <h2>Activity</h2>
-            <p style="font-weight: 500; font-size: 1.2em;"> ▶ Quantum Korea 2025 [2025.06.24 ~ 2025.06.26]
-            <div class="main-image">
-                <img src="https://tjdgus5160.github.io/CBQRC_quantum_korea.png" 
-                     alt="충북양자연구센터 연구 시설"
-                     style="display: block; margin: 20px auto; border: 1px solid #eee;">
+        <section id="activity" class="card">
+            <h2><i class="ri-calendar-event-line"></i> 주요 활동</h2>
+            <div class="activity-item">
+                <div class="activity-title">
+                    <i class="ri-flashlight-line"></i>
+                    Quantum Korea 2025
+                    <span class="activity-date">[2025.06.24 ~ 2025.06.26]</span>
+                </div>
+                <div class="main-image">
+                    <img src="https://tjdgus5160.github.io/CBQRC_quantum_korea.png" alt="Quantum Korea 2025">
+                </div>
             </div>
-
-            <p style="font-weight: 500; font-size: 1.2em;"> ▶ 충북양자연구센터(CBQRC) 설립 [2024.07.02]
-            <div class="main-image">
-                <img src="https://tjdgus5160.github.io/cbqrc.jpg" 
-                     alt="충북양자연구센터 개소식"
-                     style="display: block; margin: 20px auto; border: 1px solid #eee;">
+            <div class="activity-item">
+                <div class="activity-title">
+                    <i class="ri-building-4-line"></i>
+                    충북양자연구센터(CBQRC) 설립
+                    <span class="activity-date">[2024.07.02]</span>
+                </div>
+                <div class="main-image">
+                    <img src="https://tjdgus5160.github.io/cbqrc.jpg" alt="충북양자연구센터 개소식">
+                </div>
             </div>
-
-        <section id="contact">
-            <h2>연락처</h2>
-            <p style="line-height: 1.7; font-size: 1.1em;">
-                ▸ 주소: 충청북도 청주시 서원구 충대로 1, 충북대학교학연산공동기술연구원 701호<br>
-                ▸ 전화: 043-261<br>
-                ▸ 이메일: kiwoong@cbnu.ac.kr
-            </p>
+        </section>
+        <section id="contact" class="card">
+            <h2><i class="ri-contacts-line"></i> 연락처</h2>
+            <ul class="contact-list">
+                <li><i class="ri-map-pin-line"></i> 주소: 충청북도 청주시 서원구 충대로 1, 충북대학교학연산공동기술연구원 701호</li>
+                <li><i class="ri-phone-line"></i> 전화: 043-261</li>
+                <li><i class="ri-mail-line"></i> 이메일: kiwoong@cbnu.ac.kr</li>
+            </ul>
         </section>
     </main>
     <footer>
-        <p style="margin: 0;">© 2024 Chungbuk Quantum Research Center </p>
+        <p style="margin: 0; text-align: center;">© 2024 Chungbuk Quantum Research Center</p>
     </footer>
 </body>
 </html>
