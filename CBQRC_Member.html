@@ -4,52 +4,60 @@
     <meta charset="UTF-8">
     <title>충북양자연구센터 대표 소개 (CBQRC Director)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Pretendard Font -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <!-- Remixicon for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; 
-            margin: 0; 
-            background: #f5f7fa; 
+        :root {
+            --main-blue: #23408e;
+            --sub-blue: #4fc3f7;
+            --gray-bg: #f5f7fa;
+            --card-bg: #fff;
+            --border-radius: 16px;
+            --shadow: 0 4px 16px rgba(35,64,142,0.08);
+        }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            background: var(--gray-bg);
             font-weight: 500;
+            color: #222;
         }
-        header { 
-            background: #2d3e50; 
-            color: #fff; 
-            padding: 40px 0; 
-            text-align: center; 
+        header {
+            background: linear-gradient(90deg, var(--main-blue) 60%, var(--sub-blue) 100%);
+            color: #fff;
+            padding: 48px 0 30px 0;
+            text-align: center;
+            position: relative;
         }
-        h1 {
-            font-weight: 700;
-            font-size: 2.5em;
-            margin: 10px 0;
+        .header-title {
+            font-size: 2.4em;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
         }
-        nav { 
-            background: #1a232f; 
-            padding: 15px 0; 
-            font-weight: 700;
+        .header-desc {
+            font-size: 1.15em;
+            font-weight: 600;
+            opacity: 0.92;
         }
-        nav a { 
-            color: #fff; 
-            text-decoration: none; 
-            margin: 0 25px; 
-            font-size: 1.1em;
+        main {
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+            padding: 0 18px 48px 18px;
         }
-        nav a:hover { 
-            color: #4fc3f7; 
-        }
-        main { 
-            max-width: 900px; 
-            margin: 40px auto; 
-            background: #fff; 
-            padding: 50px 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 38px 32px 30px 32px;
+            margin-bottom: 28px;
         }
         .director-profile {
             display: flex;
             align-items: flex-start;
             gap: 40px;
-            margin-bottom: 40px;
             flex-wrap: wrap;
         }
         .director-photo {
@@ -66,27 +74,90 @@
             flex: 1;
             min-width: 220px;
         }
+        .director-name {
+            font-size: 1.35em;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--main-blue);
+        }
+        .director-title {
+            font-size: 1.08em;
+            color: #555;
+            margin-bottom: 18px;
+        }
         .greeting {
             background: #f5f7fa;
-            border-left: 5px solid #4fc3f7;
+            border-left: 5px solid var(--sub-blue);
             padding: 18px 25px;
             margin-bottom: 30px;
-            font-size: 1.17em;
+            font-size: 1.13em;
             font-weight: 600;
         }
         h2 {
-            color: #2d3e50;
-            border-bottom: 3px solid #e0e4ea;
-            padding-bottom: 12px;
-            font-weight: 700;
-            font-size: 1.5em;
+            color: var(--main-blue);
+            font-size: 1.35em;
+            font-weight: 800;
             margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        ul.career-list, ul.research-list {
-            line-height: 2;
-            font-size: 1.08em;
-            margin-left: 0;
-            padding-left: 18px;
+        h2 i {
+            font-size: 1.1em;
+            color: var(--sub-blue);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .career-list li, .research-list li {
+            margin-bottom: 7px;
+            font-size: 1.07em;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.07em;
+        }
+        .contact-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .contact-list i {
+            color: var(--sub-blue);
+            font-size: 1.2em;
+        }
+        .btn-main {
+            display: inline-block;
+            background: var(--main-blue);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 32px;
+            font-size: 1.1em;
+            margin-top: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(35,64,142,0.07);
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+        .btn-main:hover {
+            background: var(--sub-blue);
+            color: #fff;
+        }
+        @media (max-width: 800px) {
+            .card { padding: 24px 10px 20px 10px; }
+            main { padding: 0 2vw 36px 2vw; }
+            .director-profile { flex-direction: column; gap: 20px; }
+            .director-photo { max-width: 100%; }
+        }
+        @media (max-width: 500px) {
+            .header-title { font-size: 2em; }
+            .header-desc { font-size: 1em; }
         }
         footer { 
             text-align: center; 
@@ -96,46 +167,94 @@
             margin-top: 60px;
             font-weight: 500;
         }
-        @media (max-width: 768px) {
-            main { padding: 30px 10px; }
-            .director-profile { flex-direction: column; gap: 20px; }
-            .director-photo { max-width: 100%; }
+        footer p { text-align: center; }
+        .career-list li {
+            display: flex;
+            justify-content: space-between; /* 좌우 끝 정렬 */
+            align-items: center;
+            margin-bottom: 7px;
+            font-size: 1.07em;
+            gap: 18px;
         }
+
+        .career-title {
+            flex: 1 1 0;
+            min-width: 0;
+            text-align: left;
+            word-break: keep-all;
+        }
+
+        .career-period {
+            flex-shrink: 0;
+            color: #23408e;
+            font-weight: 600;
+            font-size: 0.98em;
+        margin-left: 18px;
+        white-space: nowrap;
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>충북양자연구센터</h1>
-        <p style="font-weight: 600; font-size: 1.2em;">Chungbuk Quantum Research Center</p>
+        <div class="header-title">충북양자연구센터</div>
+        <div class="header-desc">Chungbuk Quantum Research Center</div>
     </header>
     <main>
-        <section class="director-profile">
+        <section class="card director-profile" id="director">
             <div class="director-photo">
-                <!-- 대표님 실제 사진 파일로 교체하세요 -->
                 <img src="https://tjdgus5160.github.io/7da66f0b362fa4ee99931a1a7a8e64e1.jpg" alt="센터장 사진">
             </div>
             <div class="director-info">
-                <h2>센터장 소개</h2>
-                <p style="font-size:1.25em; font-weight:700; margin-bottom:6px;">김기웅 센터장 <span style="font-size:0.85em; color:#4fc3f7;">(Dr. Kiwoong Kim)</span></p>
-                <p style="font-size:1.05em; color:#555;">충북양자연구센터(Chungbuk Quantum Research Center) 센터장</p>
+                <div class="director-name">김기웅 센터장 <span style="font-size:0.85em; color:#4fc3f7;">(Professor. Kiwoong Kim)</span></div>
+                <div class="director-title">충북양자연구센터(Chungbuk Quantum Research Center) 센터장</div>
+
             </div>
         </section>
-        <section>
-            <h2>주요 이력</h2>
+        <section class="card">
+            <h2><i class="ri-medal-line"></i> 주요 이력</h2>
             <ul class="career-list">
-                <li>충북대학교 물리학과 교수 [2020.09 ~ 현재]</li>
-                <li>한국표준과학연구원 우대/책임연구원(극저자장측정팀장, 생체신호센터장, 뇌인지측정센터장) [2002.04 ~ 2020.04]</li>
-                <li>과학기술연합대학원대학교 의학물리학과 의학물리학과 교수 [2006.03 ~ 2020.08]</li>
-                <li>일본 교토대학교 전기공학부 초빙외국인학자 [2018.12 ~ 2019.04]</li>
-                <li>독일 PTB/Bernstein 뇌신경센터 초청과학자 [2012.03 ~ 2012.06]</li>
-                <li>미국 프린스턴 대학교 물리학과 Research Associate [2006.07 ~ 2007.09]</li>
-                <li>KAIST 고체물리 전공 이학박사 [1997.03 ~ 2002.02]</li>
-                <li>KAIST 물리학 전공 이학석사 [1995.03 ~ 1997.02]</li>
-                <li>KAIST 물리학 전공 이학사 [1992.03 ~ 1995.02]</li>
+                <li>
+                    <span class="career-title">충북대학교 물리학과 교수</span>
+                    <span class="career-period">2020.09 ~ 현재</span>
+                </li>
+                <li>
+                    <span class="career-title">한국표준과학연구원 우대/책임연구원(극저자장측정팀장, 생체신호센터장, 뇌인지측정센터장)</span>
+                    <span class="career-period">2002.04 ~ 2020.04</span>
+                </li>
+                <li>
+                    <span class="career-title">과학기술연합대학원대학교 의학물리학과 교수</span>
+                    <span class="career-period">2006.03 ~ 2020.08</span>
+                </li>
+                <li>
+                    <span class="career-title">일본 교토대학교 전기공학부 초빙외국인학자</span>
+                    <span class="career-period">2018.12 ~ 2019.04</span>
+                </li>
+                <li>
+                    <span class="career-title">독일 PTB/Bernstein 뇌신경센터 초청과학자</span>
+                    <span class="career-period">2012.03 ~ 2012.06</span>
+                </li>
+                <li>
+                    <span class="career-title">미국 프린스턴 대학교 물리학과 Research Associate</span>
+                    <span class="career-period">2006.07 ~ 2007.09</span>
+                </li>
+                <li>
+                    <span class="career-title">KAIST 고체물리 전공 이학박사</span>
+                    <span class="career-period">1997.03 ~ 2002.02</span>
+                </li>
+                <li>
+                    <span class="career-title">KAIST 물리학 전공 이학석사</span>
+                    <span class="career-period">1995.03 ~ 1997.02</span>
+                </li>
+                <li>
+                    <span class="career-title">KAIST 물리학 전공 이학사</span>
+                    <span class="career-period">1992.03 ~ 1995.02</span>
+                </li>
             </ul>
+
         </section>
-        <section>
-            <h2>연구 분야</h2>
+        <section class="card">
+            <h2><i class="ri-flask-line"></i> 연구 분야</h2>
             <ul class="research-list">
                 <li>광펌핑 원자자력계</li>
                 <li>다이아몬드질소공동 기반 양자한계 자기 센서 개발</li>
@@ -146,17 +265,17 @@
                 <li>양자컴퓨팅 알고리즘 및 응용</li>
             </ul>
         </section>
-        <section id="contact">
-            <h2>연락처</h2>
-            <p style="line-height: 1.7; font-size: 1.1em;">
-                ▸ 주소: 충청북도 청주시 서원구 충대로 1, 충북대학교학연산공동기술연구원 701호<br>
-                ▸ 전화: 043-261-XXXX<br>
-                ▸ 이메일: kiwoong@cbnu.ac.kr
-            </p>
+        <section class="card" id="contact">
+            <h2><i class="ri-contacts-line"></i> 연락처</h2>
+            <ul class="contact-list">
+                <li><i class="ri-map-pin-line"></i> 주소: 충청북도 청주시 서원구 충대로 1, 충북대학교학연산공동기술연구원 701호</li>
+                <li><i class="ri-phone-line"></i> 전화: 043-261-XXXX</li>
+                <li><i class="ri-mail-line"></i> 이메일: kiwoong@cbnu.ac.kr</li>
+            </ul>
         </section>
     </main>
     <footer>
-        <p style="margin: 0;">© 2024 Chungbuk Quantum Research Center</p>
+        <p style="margin: 0; text-align: center;">© 2024 Chungbuk Quantum Research Center</p>
     </footer>
 </body>
 </html>
