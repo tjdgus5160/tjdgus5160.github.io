@@ -1,12 +1,117 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Result</title>
-	</head>
-	<body><h1>YEAH SANDWICHES</h1>
-	<img src="http://bit.ly/RhrMEn" />
-		<p>I like eggs.</p>
-		<p>And ham!</p>
-		<p>But mostly sandwiches.</p>
-	</body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>충북양자연구센터 (CBQRC)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <style>
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; 
+            margin: 0; 
+            background: #f5f7fa; 
+            font-weight: 500;
+        }
+        header { 
+            background: #2d3e50; 
+            color: #fff; 
+            padding: 40px 0; 
+            text-align: center; 
+        }
+        h1 {
+            font-weight: 700;
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        nav { 
+            background: #1a232f; 
+            padding: 15px 0; 
+            font-weight: 700;
+        }
+        nav a { 
+            color: #fff; 
+            text-decoration: none; 
+            margin: 0 25px; 
+            font-size: 1.1em;
+        }
+        nav a:hover { 
+            color: #4fc3f7; 
+        }
+        main { 
+            max-width: 1000px; 
+            margin: 40px auto; 
+            background: #fff; 
+            padding: 50px 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        }
+        h2 {
+            color: #2d3e50;
+            border-bottom: 3px solid #e0e4ea;
+            padding-bottom: 12px;
+            font-weight: 700;
+            font-size: 1.8em;
+        }
+        footer { 
+            text-align: center; 
+            color: #666; 
+            padding: 30px 0; 
+            background: #f0f0f0; 
+            margin-top: 60px;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            main { padding: 30px 15px; }
+            nav a { margin: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>충북양자연구센터</h1>
+        <p style="font-weight: 600; font-size: 1.2em;">Chungbuk Quantum Research Center</p>
+    </header>
+    <nav>
+        <a href="#about">센터소개</a>
+        <a href="#research">연구분야</a>
+        <a href="#news">공지사항</a>
+        <a href="#contact">연락처</a>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>센터소개</h2>
+            <p style="line-height: 1.7; font-size: 1.1em;">
+                충북양자연구센터(CBQRC)는 차세대 양자기술 연구 개발을 선도하는 핵심 연구기관입니다.<br>
+                양자컴퓨팅, 양자센싱, 양자통신 분야의 융합 연구를 통해 4차 산업혁명을 주도합니다.
+            </p>
+        </section>
+        <section id="research">
+            <h2>연구분야</h2>
+            <ul style="line-height: 2; font-size: 1.1em;">
+                <li>▸ 양자 알고리즘 및 소프트웨어 플랫폼 개발</li>
+                <li>▸ 초정밀 양자 센서 기술 연구</li>
+                <li>▸ 양자암호통신 네트워크 구축</li>
+                <li>▸ 양자소재 및 디바이스 개발</li>
+            </ul>
+        </section>
+        <section id="news">
+            <h2>공지사항</h2>
+            <ul style="line-height: 1.8; font-size: 1.1em;">
+                <li>2025.05.25 - 양자연구 국제심포지엄 개최 안내</li>
+                <li>2025.05.21 - 홈페이지 정식 오픈</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>연락처</h2>
+            <p style="line-height: 1.7; font-size: 1.1em;">
+                ▸ 주소: 충청북도 청주시 서원구 양지로 77<br>
+                ▸ 전화: 043-234-5678<br>
+                ▸ 이메일: contact@cbqrc.kr
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p style="margin: 0;">© 2025 Chungbuk Quantum Research Center. All rights reserved.</p>
+    </footer>
+</body>
 </html>
