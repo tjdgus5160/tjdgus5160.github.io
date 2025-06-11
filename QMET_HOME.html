@@ -37,9 +37,9 @@ body.dark {
 *{ margin: 0; padding: 0; outline: none; text-decoration: none; box-sizing: border-box; }
 ::before, ::after { box-sizing: border-box; }
 ul { list-style: none; }
-body { line-height: 1.5; font-size: 16px; font-family: 'Poppins', sans-serif; background:transparent !important;}
+body { line-height: 1.5; font-size: 16px; font-family: 'Poppins', sans-serif; background:#151515}
 .section { 
-    background: transparent !important; 
+    background: #151515; 
     min-height: 100vh; 
     display: block; 
     opacity: 1; 
@@ -439,6 +439,23 @@ color-5.css
     </style>
 </head>
 <body class="dark">
+  <!-- Aside Navigation -->
+<div class="aside">
+    <div class="logo">
+        <a href="index.html">QMET</a>
+    </div>
+    <div class="nav-toggler">
+        <span></span>
+    </div>
+    <ul class="nav">
+        <li><a href="https://qmet.github.io/" class="active"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="https://qmet.github.io/professor"><i class="fa fa-user"></i>Professor</a></li>
+        <li><a href="https://qmet.github.io/members"><i class="fa fa-users"></i>Members</a></li>
+        <li><a href="https://qmet.github.io/papers"><i class="fa fa-file-text"></i>Papers</a></li>
+        <li><a href="https://qmet.github.io/activities"><i class="fa fa-briefcase"></i>Activities</a></li>
+    </ul>
+</div>
+
     <div class="main-container">
         <div class="main-content">
             <section class="home section active" id="home">
@@ -481,21 +498,21 @@ color-5.css
                                 </div>
                             </article>
                             <article class="carousel-item">
-                                <img src="s" alt="Quantum Annealing">
+                                <img src="https://via.placeholder.com/400x300" alt="Quantum Annealing">
                                 <div class="carousel-content">
                                     <h2>Quantum Annealing</h2>
                                     <p></p>
                                 </div>
                             </article>
                             <article class="carousel-item">
-                                <img src="s" alt="NV Center">
+                                <img src="https://via.placeholder.com/400x300" alt="NV Center">
                                 <div class="carousel-content">
                                     <h2>NV Center</h2>
                                     <p></p>
                                 </div>
                             </article>
                             <article class="carousel-item">
-                                <img src="s" alt="Mirror Align">
+                                <img src="https://via.placeholder.com/400x300" alt="Mirror Align">
                                 <div class="carousel-content">
                                     <h2>5-axis Mirror Align Programming</h2>
                                     <p></p>
@@ -755,8 +772,8 @@ function asideSectionTogglerBtn(){
         let currentIndex = 1;
         function setTrackPosition(animate = true) {
             const itemWidth = getItemWidth();
-            if (!animate) track.style.transition = 'none';
-            else track.style.transition = 'transform 0.5s ease-in-out';
+            if (!animate) {track.style.transition = 'none'; track.offsetHeight;}
+            else {track.style.transition = 'transform 0.5s ease-in-out';}
             track.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
         }
         setTrackPosition(false);
@@ -782,7 +799,7 @@ function asideSectionTogglerBtn(){
                 setTrackPosition(false);
             }
         });
-
+        
         nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
 
